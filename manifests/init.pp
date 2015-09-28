@@ -1,11 +1,6 @@
 # == Class: python
 #
-# Full description of class python here.
-#
-# === Parameters
-#
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
+# Install python2 and python3
 #
 class python (
 ) {
