@@ -4,8 +4,8 @@ Puppet::Functions.create_function(:'python::data') do
     prefix = closure_scope.lookupvar('::boxen::config::home')
     installdir = closure_scope.lookupvar('::homebrew::config::installdir')
     darwin_build_opts = {
-      'CFLAGS' => "-I#{installdir}/include -I/opt/X11/include -march=core2 -O3",
-      'LDFLAGS' => "-L#{installdir}/lib -L/opt/X11/lib",
+      'CFLAGS' => "-I#{installdir}/include -march=core2 -O3",
+      'LDFLAGS' => "-L#{installdir}/lib",
       'PYTHON_CONFIGURE_OPTS' => "--with-readline-dir=#{installdir}/opt/readline"
     }
     {
