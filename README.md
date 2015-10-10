@@ -59,7 +59,6 @@ exec { "env -i bash -c 'source /opt/boxen/env.sh && PYENV_VERSION=${version} vir
 
 * `boxen >= 3.2.0`
 * `repository >= 2.1`
-* `xquartz`
 * `gcc`
 * `stdlib`
 * `java` (jython)

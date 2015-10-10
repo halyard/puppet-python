@@ -41,7 +41,6 @@ define python::version(
     }
 
     if $::operatingsystem == 'Darwin' {
-      require xquartz
       include homebrew::config
       include boxen::config
       ensure_resource('package', 'readline')
