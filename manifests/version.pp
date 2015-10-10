@@ -33,9 +33,11 @@ define python::version(
       default: { }
     }
 
+    $pyenv = $python::pyenv::prefix
+
     $default_env = {
       'CC'         => '/usr/bin/cc',
-      'PYENV_ROOT' => $python::pyenv::prefix,
+      'PYENV_ROOT' => $pyenv,
     }
 
     if $::operatingsystem == 'Darwin' {
@@ -66,8 +68,8 @@ define python::version(
     }
 
     exec { "python-install-${version}":
-      command  => "${python::pyenv::prefix}/bin/pyenv install --skip-existing ${version}",
-      cwd      => "${python::pyenv::prefix}/versions",
+      command  => "${pyenv}/bin/pyenv install --skip-existing ${version}",
+      cwd      => "${pyenv}/versions",
       provider => 'shell',
       timeout  => 0,
       creates  => $dest,

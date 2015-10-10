@@ -18,11 +18,11 @@ define python::package(
   require python
 
   pyenv_package { $name:
-    ensure         => $ensure,
-    package        => $package,
-    version        => $version,
-    pyenv_version  => $python,
-    pyenv_root     => $python::pyenv::prefix,
-    provider       => pip,
+    ensure        => $ensure,
+    package       => $package,
+    version       => $version,
+    pyenv_version => $python,
+    pyenv_root    => $python::pyenv::prefix,
+    provider      => pip,
   }
 }
