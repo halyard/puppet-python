@@ -12,7 +12,7 @@ define python::version(
 ) {
   require python
 
-  $alias_hash = hiera_hash('python::version::alias', {})
+  $alias_hash = $python::version_alias
   $dest = "/opt/python/${version}"
 
   if has_key($alias_hash, $version) {
@@ -46,21 +46,36 @@ define python::version(
       ensure_resource('package', 'readline')
     }
 
-    $hierdata = hiera_hash('python::version::env', {})
+    $env_data = $python::version_env
 
-    if has_key($hierdata, $::operatingsystem) {
-      $os_env = $hierdata[$::operatingsystem]
+    if has_key($env_data, 'global') {
+      $global_env = $env_data['global']
+    } else {
+      $global_env = {}
+    }
+
+    if has_key($env_data, $::operatingsystem) {
+      $os_env = $env_data[$::operatingsystem]
     } else {
       $os_env = {}
     }
 
-    if has_key($hierdata, $version) {
-      $version_env = $hierdata[$version]
+    if has_key($env_data, $version) {
+      $version_env = $env_data[$version]
     } else {
       $version_env = {}
     }
 
-    $_env = merge(merge(merge($default_env, $os_env), $version_env), $env)
+    $_env = merge(
+      merge(
+        merge(
+          merge($default_env, $os_env),
+          $version_env
+        ),
+        $global_env,
+      ),
+      $env
+    )
 
     if has_key($_env, 'CC') and $_env['CC'] =~ /gcc/ {
       require gcc

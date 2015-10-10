@@ -14,7 +14,7 @@ Puppet::Functions.create_function(:'python::data') do
       'python::pyenv::user' => user,
       'python::pyenv::prefix' => "#{prefix}/pyenv",
       'python::pyenv::ensure' => 'v20150913',
-      'python::version::alias' => {
+      'python::version_alias' => {
        '2' => '2.7.10',
        '2.6' => '2.6.9',
        '2.7' => '2.7.10',
@@ -22,7 +22,7 @@ Puppet::Functions.create_function(:'python::data') do
        '3.4' => '3.4.3',
        '3.5' => '3.5.0'
       },
-      'python::version::env' => {
+      'python::version_env' => {
         'Darwin' => darwin_build_opts
       }
     }

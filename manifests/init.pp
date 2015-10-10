@@ -5,8 +5,10 @@
 #   include python
 #
 class python(
-  $prefix   = $python::prefix,
-  $user     = $python::user,
+  $prefix,
+  $user,
+  $version_alias,
+  $version_env,
 ) {
   if $::osfamily == 'Darwin' {
     include boxen::config
