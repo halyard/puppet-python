@@ -20,7 +20,7 @@ define python::package(
   $pyenv_versions = any2array($python)
 
   $pyenv_versions.each |$pyenv_version| {
-    pyenv_package { $name:
+    pyenv_package { "$name for $pyenv_version":
       ensure        => $ensure,
       package       => $package,
       version       => $version,
