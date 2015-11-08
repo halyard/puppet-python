@@ -72,5 +72,5 @@ exec { "env -i bash -c 'source /opt/boxen/env.sh && PYENV_VERSION=${version} vir
 
 ## License
 
-python is released under the MIT License. See the bundled LICENSE file for details.
+puppet-python is released under the MIT License. See the bundled LICENSE file for details.
 
