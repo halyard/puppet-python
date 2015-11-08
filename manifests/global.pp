@@ -10,7 +10,11 @@ class python::global(
 ) {
   require python
 
-  $version_list = split($version, '[, ]+')
+  if is_array($version) {
+    $version_list = $version
+  } else {
+    $version_list = split($version, '[, ]+')
+  }
   $version_list_without_system = delete($version_list, 'system')
   if count($version_list_without_system) > 0 {
     ensure_resource('python::version', $version_list_without_system)
