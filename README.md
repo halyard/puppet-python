@@ -10,6 +10,12 @@ Install Python versions using [pyenv](https://github.com/yyuu/pyenv). Module bas
 
 This is a fork from [Matthew Loberg's puppet-python](https://github.com/mloberg/puppet-python), tweaked for my environment and Puppet 4 compat.
 
+## Changes from upstream
+
+* Adjusted to use CircleCI
+* Adjusted to support Puppet 4 module data bindings
+* Added support for multiple global python versions
+
 ## Usage
 
 ```puppet
