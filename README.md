@@ -15,6 +15,7 @@ This is a fork from [Matthew Loberg's puppet-python](https://github.com/mloberg/
 * Adjusted to use CircleCI
 * Adjusted to support Puppet 4 module data bindings
 * Added support for multiple global python versions
+* Added support to python::package for an array of versions
 
 ## Usage
 
