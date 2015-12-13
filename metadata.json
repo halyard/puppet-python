@@ -1,6 +1,6 @@
 {
   "name": "halyard-python",
-  "version": "3.0.12",
+  "version": "3.0.13",
   "author": "Les Aker",
   "license": "MIT",
   "summary": "Configure python via Boxen",
