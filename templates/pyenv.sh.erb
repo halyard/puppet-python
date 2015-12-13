@@ -2,4 +2,4 @@ export PYENV_ROOT=<%= scope.lookupvar("::python::pyenv::prefix") %>
 
 export PATH=<%= scope.lookupvar("::python::pyenv::prefix") %>/bin:$PATH
 
-eval "$(pyenv init -)"
+[[ -z "$SKIP_PYENV_INIT" ]] && eval "$(pyenv init -)"
