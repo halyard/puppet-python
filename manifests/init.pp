@@ -28,7 +28,7 @@ class python(
     owner  => $user,
   }
 
-  Class['python::pyenv'] ->
-    Python::Version <| |> ->
-    Python::Plugin <| |>
+  Class['python::pyenv']
+  -> Python::Version <| |>
+  -> Python::Plugin <| |>
 }
