@@ -3,7 +3,7 @@ python
 
 [![Puppet Forge](https://img.shields.io/puppetforge/v/halyard/python.svg)](https://forge.puppetlabs.com/halyard/python)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
-[![Build Status](https://img.shields.io/circleci/project/halyard/puppet-python/master.svg)](https://circleci.com/gh/halyard/puppet-python)
+[![Build Status](https://img.shields.io/travis/com/halyard/puppet-python.svg)](https://travis-ci.com/halyard/puppet-python)
 
 Install Python versions using [pyenv](https://github.com/yyuu/pyenv). Module based off of [puppet-ruby](https://github.com/boxen/puppet-ruby) and [puppet-nodejs](https://github.com/boxen/puppet-nodejs).
 
